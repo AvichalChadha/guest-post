@@ -1,0 +1,47 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block title %}
+Guest posts 
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <h1>Share your Ideas </h1>
+        <form method="POST" action="/">
+            {{ form.csrf_token }}
+            <div class="row">
+                    <div class="col-lg-6">
+                {{ wtf.form_field(form.title) }}
+                {{ wtf.form_field(form.email) }}
+            </div>
+            <div class="col-lg-6">
+                {{ wtf.form_field(form.url) }}
+                {{ wtf.form_field(form.author) }}
+            </div>
+            </div>
+            
+            
+            {{ wtf.form_field(form.description) }}
+            {{ wtf.form_field(form.post) }}
+            {{ wtf.form_field(form.AuthorDescription) }}
+            
+            <input class="btn btn-primary" type="submit" value="Submit">
+        </form>
+
+{% block scripts %}
+{{super()}}
+
+<script src="//cdn.ckeditor.com/4.8.0/standard/ckeditor.js"></script>
+<script>CKEDITOR.replace( 'post' );</script>
+<script>CKEDITOR.replace( 'AuthorDescription' );</script>
+{% endblock %}
+
+
+       <h1> tell users to put the content in html form </h1>
+    </div>
+
+{% endblock %}
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Guest Posts </title>
+</head>
+<body>
+
+<h1>Add your post! </h1>
+
+
+
+<form action="{{ url_for('send') }}" method = "POST">
+        <!-- OR -->
+<!--form action="/send" method = "POST" -->        
+        Title:  <input type="text" name="title" maxlength=>"60"<br>
+        Author's Name:  <input type="text" name="AuthorName" maxlength=>"20">
+        Description: <input type="text" name="Author" maxlength=>"120">
+        Post: <textarea rows = "5" cols = "50" name = "post" maxlength="1000"/>
+        
+             
+        Author's Discription:  <input type="text" name="AuthorDescription" maxlength=>"120">
+        <br><br>
+        <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

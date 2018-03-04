@@ -14,8 +14,11 @@ Guest posts
             {{ form.csrf_token }}
             <div class="row">
                     <div class="col-lg-6">
+                        <dl>
                 {{ wtf.form_field(form.title) }}
+                
                 {{ wtf.form_field(form.email) }}
+                </dl>
             </div>
             <div class="col-lg-6">
                 {{ wtf.form_field(form.url) }}
@@ -23,10 +26,11 @@ Guest posts
             </div>
             </div>
             
-            
+            <dl>
             {{ wtf.form_field(form.description) }}
             {{ wtf.form_field(form.post) }}
             {{ wtf.form_field(form.AuthorDescription) }}
+        </dl>
             
             <input class="btn btn-primary" type="submit" value="Submit">
         </form>
@@ -40,7 +44,6 @@ Guest posts
 {% endblock %}
 
 
-       <h1> tell users to put the content in html form </h1>
     </div>
 
 {% endblock %}
